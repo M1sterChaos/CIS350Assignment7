@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * (Austin Buck)
+ * (Assignment 7)
+ * (Controls the camera movement)
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
