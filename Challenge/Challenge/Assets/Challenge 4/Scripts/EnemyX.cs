@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * (Austin Buck)
+ * (Challenge)
+ * (Controls the enemy)
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +16,10 @@ public class EnemyX : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerGoal = GameObject.FindGameObjectWithTag("PlayerGoal");
         enemyRb = GetComponent<Rigidbody>();
+
+       speed =  SpawnManagerX.speed = 10f;
     }
 
     // Update is called once per frame

@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿/*
+ * (Austin Buck)
+ * (Challenge)
+ * (Controls the enemy spawning and wave number)
+ */
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,15 +17,16 @@ public class SpawnManagerX : MonoBehaviour
     private float spawnZMax = 25; // set max spawn Z
 
     public int enemyCount;
-    public int waveCount = 1;
+    public static int waveCount = 1;
 
 
-    public GameObject player; 
+    public GameObject player;
+    public static float speed;
 
     // Update is called once per frame
     void Update()
     {
-        enemyCount = GameObject.FindGameObjectsWithTag("Powerup").Length;
+        enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
 
         if (enemyCount == 0)
         {
@@ -49,9 +55,10 @@ public class SpawnManagerX : MonoBehaviour
         }
 
         // Spawn number of enemy balls based on wave number
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i < enemiesToSpawn; i++)
         {
             Instantiate(enemyPrefab, GenerateSpawnPosition(), enemyPrefab.transform.rotation);
+            speed++;
         }
 
         waveCount++;
